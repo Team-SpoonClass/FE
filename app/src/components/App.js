@@ -1,5 +1,11 @@
+import "components/App.css";
+
 function App() {
-  return <div className="App">안녕!!</div>;
+  return (
+    <>
+      <div>안녕!!</div>
+    </>
+  );
 }
 
 export default App;
