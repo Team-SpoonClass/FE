@@ -1,9 +1,10 @@
-import "components/App.css";
+import "./App.css";
+import Router from "components/Router";
 
 function App() {
   return (
     <>
-      <div>안녕!!</div>
+      <Router />
     </>
   );
 }
