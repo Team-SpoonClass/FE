@@ -9,10 +9,12 @@ import SignInPage from "pages/SignInPage";
 import SignUpPage from "pages/SignUpPage";
 
 import routes from "routes";
+import Header from "components/Header";
 
 function Router() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path={routes.home} element={<MainPage />} />
         <Route path={routes.landing} element={<LandingPage />} />

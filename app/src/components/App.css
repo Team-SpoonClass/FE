@@ -3,3 +3,21 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
