@@ -1,5 +1,7 @@
+import "./index.css";
+
 function MainPage() {
-  return <>메인페이지!</>;
+  return <main className="home">메인페이지!</main>;
 }
 
 export default MainPage;
