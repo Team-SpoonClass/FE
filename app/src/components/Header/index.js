@@ -14,9 +14,15 @@ function Header() {
             </li>
           </ul>
         )}
-        <Link to="/" className="logo">
-          <img src="/img/spoonclass_logo.png" alt="SPOONCLASS" />
-        </Link>
+        {isLoggedIn ? (
+          <Link to="/" className="logo">
+            <img src="/img/spoonclass_logo.png" alt="SPOONCLASS" />
+          </Link>
+        ) : (
+          <Link to="/landing" className="logo">
+            <img src="/img/spoonclass_logo.png" alt="SPOONCLASS" />
+          </Link>
+        )}
         {isLoggedIn ? (
           <ul className="auth-menu">
             <li>

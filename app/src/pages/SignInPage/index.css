@@ -1,0 +1,5 @@
+.authFormContainer > .inner {
+  display: flex;
+  justify-content: center;
+  padding-top: 152px;
+}
