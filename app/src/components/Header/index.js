@@ -2,19 +2,21 @@ import "./index.css";
 import { Link } from "react-router-dom";
 
 function Header() {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   const userName = "김수연";
   return (
     <header>
       <div className="inner">
+        {isLoggedIn && (
+          <ul className="main-menu">
+            <li>
+              <Link to="/class/new">클래스 만들기</Link>
+            </li>
+          </ul>
+        )}
         <Link to="/" className="logo">
           <img src="/img/spoonclass_logo.png" alt="SPOONCLASS" />
         </Link>
-        <ul className="main-menu">
-          <li>
-            <Link to="/class/new">클래스 만들기</Link>
-          </li>
-        </ul>
         {isLoggedIn ? (
           <ul className="auth-menu">
             <li>
