@@ -1,0 +1,32 @@
+.signUpForm {
+  width: 400px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 35px 34px 32px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signUpForm h1 {
+  font-weight: bold;
+  font-size: 24px;
+  color: #4b4b4b;
+}
+
+.signUpForm .authInput-container {
+  width: 100%;
+  font-size: 15px;
+  margin-top: 23px;
+}
+
+.signUpForm .induce-signIn {
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.signUpForm .induce-signIn a {
+  color: #6db1fa;
+  text-decoration: underline;
+}

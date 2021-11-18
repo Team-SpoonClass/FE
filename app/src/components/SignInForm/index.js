@@ -20,7 +20,6 @@ function SignInForm() {
         <AuthInput
           type="text"
           inputHook={email}
-          label="이메일 주소"
           placeHolder="이메일 주소 입력"
         />
       </div>
@@ -29,7 +28,6 @@ function SignInForm() {
         <AuthInput
           type="password"
           inputHook={password}
-          label="비밀번호"
           placeHolder="비밀번호 입력"
         />
       </div>

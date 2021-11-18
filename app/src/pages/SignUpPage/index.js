@@ -1,5 +1,14 @@
+import "./index.css";
+import SignUpForm from "components/SignUpForm";
+
 function SignUpPage() {
-  return <>회원가입페이지!</>;
+  return (
+    <main className="authFormContainer">
+      <div className="inner">
+        <SignUpForm />
+      </div>
+    </main>
+  );
 }
 
 export default SignUpPage;
