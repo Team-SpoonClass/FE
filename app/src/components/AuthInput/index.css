@@ -15,7 +15,7 @@
 }
 
 .authInput input:focus {
-  outline: 2px solid #f09fcd;
+  outline: 2px solid #ff93ac;
 }
 
 .authInput input::placeholder {
