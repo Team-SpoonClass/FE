@@ -2,9 +2,10 @@ import "./index.css";
 import { useState } from "react";
 import AuthInput from "components/AuthInput";
 import useInput from "hooks/useInput";
-import AuthSubmitBtn from "components/AuthSubmitBtn";
+import { AuthSubmitBtn } from "components/Button";
 import SchoolChoice from "components/SchoolChoice";
 import { Link } from "react-router-dom";
+import client from "lib/client";
 
 function SignUpForm() {
   const userName = useInput("");
@@ -15,16 +16,29 @@ function SignUpForm() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    if (password.value !== passwordConfirm.value) {
+    if (
+      !userName.value ||
+      !email.value ||
+      !password.value ||
+      !passwordConfirm.value ||
+      !school
+    ) {
+      alert("모든 입력창에 입력을 완료해주세요.");
+      return;
+    } else if (password.value !== passwordConfirm.value) {
       alert("비밀번호가 일치하지 않습니다.");
       return;
     }
-    console.log(
-      userName.value,
-      email.value,
-      password.value,
-      passwordConfirm.value
-    );
+    const requestBody = {
+      email: email.value,
+      password: password.value,
+      name: userName.value,
+      univ: school,
+    };
+
+    await client.post("/auth/signUp", requestBody).then((res) => {
+      console.log(res);
+    });
   };
   return (
     <form className="signUpForm" onSubmit={onSubmit}>

@@ -1,7 +1,7 @@
 import "./index.css";
 import AuthInput from "components/AuthInput";
 import useInput from "hooks/useInput";
-import AuthSubmitBtn from "components/AuthSubmitBtn";
+import { AuthSubmitBtn } from "components/Button";
 import { Link } from "react-router-dom";
 
 function SignInForm() {

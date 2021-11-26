@@ -1,6 +1,6 @@
 import "./index.css";
 
-function AuthSubmitBtn({ value }) {
+export function AuthSubmitBtn({ value }) {
   return <input className="btn--authSubmit" type="submit" value={value} />;
 }
 
