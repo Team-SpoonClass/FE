@@ -2,7 +2,7 @@ import "./index.css";
 import { Link } from "react-router-dom";
 
 function Header() {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   const userName = "김수연";
   return (
     <header>
