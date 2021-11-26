@@ -2,7 +2,7 @@ import "./index.css";
 import { useState } from "react";
 import { AuthInput } from "components/Input";
 import useInput from "hooks/useInput";
-import { AuthSubmitBtn } from "components/Button";
+import { CustomSubmitBtn } from "components/CustomButton";
 import SchoolChoice from "components/SchoolChoice";
 import { Link } from "react-router-dom";
 import client from "lib/client";
@@ -76,7 +76,7 @@ function SignUpForm() {
         <label>학교</label>
         <SchoolChoice school={school} setSchool={setSchool} />
       </div>
-      <AuthSubmitBtn value="가입하기" />
+      <CustomSubmitBtn value="가입하기" />
       <div className="induce-signIn">
         <Link to="/signIn">기존 계정으로 로그인하기</Link>
       </div>

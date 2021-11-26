@@ -1,7 +1,7 @@
 import "./index.css";
 import { AuthInput } from "components/Input";
 import useInput from "hooks/useInput";
-import { AuthSubmitBtn } from "components/Button";
+import { CustomSubmitBtn } from "components/CustomButton";
 import { Link } from "react-router-dom";
 
 function SignInForm() {
@@ -31,7 +31,7 @@ function SignInForm() {
           placeHolder="비밀번호 입력"
         />
       </div>
-      <AuthSubmitBtn value="로그인" />
+      <CustomSubmitBtn value="로그인" />
       <div className="induce-signUp">
         <span>아직 스푼클래스 계정이 없으신가요?</span>
         <Link to="/signUp">가입하기</Link>

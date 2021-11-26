@@ -21,6 +21,11 @@
   margin-top: 23px;
 }
 
+.signInForm .btn {
+  width: 100%;
+  margin-top: 23px;
+}
+
 .signInForm .induce-signUp {
   margin-top: 12px;
   font-size: 13px;
