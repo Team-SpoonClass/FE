@@ -1,6 +1,6 @@
 import "./index.css";
 import { useState } from "react";
-import AuthInput from "components/AuthInput";
+import { AuthInput } from "components/Input";
 import useInput from "hooks/useInput";
 import { AuthSubmitBtn } from "components/Button";
 import SchoolChoice from "components/SchoolChoice";
