@@ -7,3 +7,19 @@ export function AuthInput({ type, inputHook, placeHolder }) {
     </div>
   );
 }
+
+export function ClassInput({ type, inputHook }) {
+  return (
+    <div className="classInput">
+      <input type={type} {...inputHook} />
+    </div>
+  );
+}
+
+export function ClassTextarea({ inputHook }) {
+  return (
+    <div className="classTextarea">
+      <textarea {...inputHook} />
+    </div>
+  );
+}

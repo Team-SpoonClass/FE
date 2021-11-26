@@ -22,3 +22,22 @@ a {
   margin: 0 auto;
   position: relative;
 }
+
+.inner__first {
+  width: 1060px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.inner__second {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4b4b4b;
+  margin: 33px 0 22px;
+}
