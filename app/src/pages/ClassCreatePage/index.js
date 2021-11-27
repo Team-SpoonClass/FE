@@ -9,7 +9,7 @@ function ClassCreatePage() {
           <h1 className="page-title">새 클래스 만들기</h1>
         </div>
         <div className="inner__second">
-          <ClassForm type="new" />
+          <ClassForm purpose="new" />
         </div>
       </div>
     </main>

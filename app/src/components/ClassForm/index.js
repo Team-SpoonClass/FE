@@ -3,12 +3,25 @@ import { ClassInput, ClassTextarea } from "components/Input";
 import { CustomSubmitBtn } from "components/CustomButton";
 import useInput from "hooks/useInput";
 
-function ClassForm() {
+function ClassForm({ purpose }) {
   const name = useInput("");
   const oneLineInfo = useInput("", (value) => value.length <= 50);
   const club = useInput("");
   const description = useInput("");
   const openKakao = useInput("");
+
+  let buttonValue;
+
+  switch (purpose) {
+    case "new":
+      buttonValue = "클래스 생성하기";
+      break;
+    case "update":
+      buttonValue = "클래스 수정하기";
+      break;
+    default:
+      break;
+  }
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -45,7 +58,7 @@ function ClassForm() {
           클래스 참가자들이 참가문의를 요청할 경우, 오픈카톡링크로 연결됩니다.
         </div>
       </div>
-      <CustomSubmitBtn value="클래스 생성하기" />
+      <CustomSubmitBtn value={buttonValue} />
     </form>
   );
 }
