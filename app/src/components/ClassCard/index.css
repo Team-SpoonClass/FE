@@ -1,0 +1,43 @@
+.classCard {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 306px;
+  cursor: pointer;
+}
+
+.classCard .class__imgSpace {
+  width: 306px;
+  height: 228px;
+  background-color: royalblue;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.classCard p {
+  font-size: 15px;
+  font-weight: normal;
+  color: #3d3d3d;
+}
+
+.classCard .class__info {
+  border-bottom: 1px solid #ff7c9b;
+  padding: 14px 0 23px;
+}
+
+.classCard .class__info h3 {
+  height: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.classCard .class__info p {
+  height: 30px;
+  margin-top: 14px;
+}
+
+.classCard .class__club {
+  margin-top: 10px;
+  color: #3d3d3d;
+}
