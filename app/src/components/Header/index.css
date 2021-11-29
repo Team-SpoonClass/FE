@@ -9,6 +9,8 @@ header {
 
 header > .inner {
   height: 66px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 header .logo {

@@ -1,5 +1,6 @@
 import "./index.css";
 import { Link } from "react-router-dom";
+import logoImgPath from "assets/img/spoonclass_logo.png";
 
 function Header() {
   const isLoggedIn = false;
@@ -16,11 +17,11 @@ function Header() {
         )}
         {isLoggedIn ? (
           <Link to="/" className="logo">
-            <img src="/img/spoonclass_logo.png" alt="SPOONCLASS" />
+            <img src={logoImgPath} alt="SPOONCLASS" />
           </Link>
         ) : (
           <Link to="/landing" className="logo">
-            <img src="/img/spoonclass_logo.png" alt="SPOONCLASS" />
+            <img src={logoImgPath} alt="SPOONCLASS" />
           </Link>
         )}
         {isLoggedIn ? (
