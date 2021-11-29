@@ -1,5 +1,7 @@
 import "./index.css";
 import ClassCard from "components/ClassCard";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const classList = [
   {
@@ -47,7 +49,14 @@ const classList = [
   },
 ];
 
-function MainPage() {
+function MainPage({ userObj }) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userObj) {
+      navigate("/landing");
+    }
+  }, [userObj, navigate]);
   return (
     <main className="home">
       <div className="inner">

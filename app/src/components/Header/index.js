@@ -2,20 +2,18 @@ import "./index.css";
 import { Link } from "react-router-dom";
 import logoImgPath from "assets/img/spoonclass_logo.png";
 
-function Header() {
-  const isLoggedIn = false;
-  const userName = "김수연";
+function Header({ userObj }) {
   return (
     <header>
       <div className="inner">
-        {isLoggedIn && (
+        {userObj && (
           <ul className="main-menu">
             <li>
               <Link to="/class/new">클래스 만들기</Link>
             </li>
           </ul>
         )}
-        {isLoggedIn ? (
+        {userObj ? (
           <Link to="/" className="logo">
             <img src={logoImgPath} alt="SPOONCLASS" />
           </Link>
@@ -24,10 +22,10 @@ function Header() {
             <img src={logoImgPath} alt="SPOONCLASS" />
           </Link>
         )}
-        {isLoggedIn ? (
+        {userObj ? (
           <ul className="auth-menu">
             <li>
-              <span className="user-name">{userName}</span>님
+              <span className="user-name">{userObj.name}</span>님
             </li>
             <li>
               <span className="logOut">로그아웃</span>

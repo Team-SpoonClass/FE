@@ -1,7 +1,16 @@
 import "./index.css";
 import ClassForm from "components/ClassForm";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
-function ClassEditPage() {
+function ClassEditPage({ userObj }) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userObj) {
+      navigate("/landing");
+    }
+  }, [userObj, navigate]);
   return (
     <main className="edit-class">
       <div className="inner">

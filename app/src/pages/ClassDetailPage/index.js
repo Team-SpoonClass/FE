@@ -1,8 +1,16 @@
 import "./index.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
-function ClassDetailPage() {
+function ClassDetailPage({ userObj }) {
   const { id } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userObj) {
+      navigate("/landing");
+    }
+  }, [userObj, navigate]);
 
   return (
     <main className="detail-class">

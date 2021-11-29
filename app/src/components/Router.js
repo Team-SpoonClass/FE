@@ -11,18 +11,36 @@ import SignUpPage from "pages/SignUpPage";
 import routes from "routes";
 import Header from "components/Header";
 
-function Router() {
+function Router({ userObj }) {
   return (
     <BrowserRouter>
-      <Header />
+      <Header userObj={userObj} />
       <Routes>
-        <Route path={routes.home} element={<MainPage />} />
-        <Route path={routes.landing} element={<LandingPage />} />
-        <Route path={routes.signIn} element={<SignInPage />} />
-        <Route path={routes.signUp} element={<SignUpPage />} />
-        <Route path={routes.classCreate} element={<ClassCreatePage />} />
-        <Route path={routes.classDetail} element={<ClassDetailPage />} />
-        <Route path={routes.classEdit} element={<ClassEditPage />} />
+        <Route path={routes.home} element={<MainPage userObj={userObj} />} />
+        <Route
+          path={routes.landing}
+          element={<LandingPage userObj={userObj} />}
+        />
+        <Route
+          path={routes.signIn}
+          element={<SignInPage userObj={userObj} />}
+        />
+        <Route
+          path={routes.signUp}
+          element={<SignUpPage userObj={userObj} />}
+        />
+        <Route
+          path={routes.classCreate}
+          element={<ClassCreatePage userObj={userObj} />}
+        />
+        <Route
+          path={routes.classDetail}
+          element={<ClassDetailPage userObj={userObj} />}
+        />
+        <Route
+          path={routes.classEdit}
+          element={<ClassEditPage userObj={userObj} />}
+        />
         <Route>NotFound</Route>
       </Routes>
     </BrowserRouter>
