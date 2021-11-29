@@ -26,13 +26,13 @@ a {
 
 .inner__first {
   width: 1060px;
-  margin: 0 auto;
+  margin: 33px auto 0;
   position: relative;
 }
 
 .inner__second {
   width: 980px;
-  margin: 0 auto;
+  margin: 22px auto 0;
   position: relative;
 }
 
@@ -40,5 +40,4 @@ a {
   font-size: 24px;
   font-weight: 700;
   color: #4b4b4b;
-  margin: 33px 0 22px;
 }

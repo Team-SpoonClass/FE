@@ -12,10 +12,13 @@ function ClassCard({ classData }) {
       ? `${classData.oneLineInfo.slice(0, 45)}...`
       : classData.oneLineInfo;
 
-  const linkUrl = `/class/${classData.id}`;
   return (
     <li className="classCard">
-      <Link to={linkUrl}>
+      <Link
+        to={{
+          pathname: `/class/${classData.id}`,
+        }}
+      >
         <div className="class__imgSpace" />
         <div className="class__info">
           <h3>{nameSummery}</h3>

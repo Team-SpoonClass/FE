@@ -11,3 +11,7 @@
 .btn--active {
   background: #ff93ac;
 }
+
+.btn--active:hover {
+  background: #ff7c9b;
+}
