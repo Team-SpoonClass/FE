@@ -6,6 +6,7 @@ import { CustomSubmitBtn } from "components/CustomButton";
 import SchoolChoice from "components/SchoolChoice";
 import { Link } from "react-router-dom";
 import client from "lib/client";
+import { useNavigate } from "react-router-dom";
 
 function SignUpForm() {
   const userName = useInput("");
@@ -13,6 +14,7 @@ function SignUpForm() {
   const password = useInput("");
   const passwordConfirm = useInput("");
   const [school, setSchool] = useState(null);
+  const navigate = useNavigate();
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -36,9 +38,16 @@ function SignUpForm() {
       univ: school,
     };
 
-    await client.post("/auth/signUp", requestBody).then((res) => {
-      console.log(res);
-    });
+    try {
+      await client.post("/auth/signUp", requestBody).then((res) => {
+        if (res.status === 200) {
+          alert(`회원가입이 완료되었습니다! 로그인해주세요!`);
+          navigate("/signIn");
+        }
+      });
+    } catch (error) {
+      alert(error.message);
+    }
   };
   return (
     <form className="signUpForm" onSubmit={onSubmit}>
