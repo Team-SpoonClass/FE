@@ -9,7 +9,7 @@ function ClassCard({ classData }) {
 
   const oneLineInfoSummery =
     classData.oneLineInfo.length > 45
-      ? `${classData.oneLineInfo.slice(0, 45)}...`
+      ? `${classData.oneLineInfo.slice(0, 41)}...`
       : classData.oneLineInfo;
 
   return (
