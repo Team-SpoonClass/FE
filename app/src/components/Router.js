@@ -11,10 +11,10 @@ import SignUpPage from "pages/SignUpPage";
 import routes from "routes";
 import Header from "components/Header";
 
-function Router({ userObj }) {
+function Router({ userObj, setUserObj }) {
   return (
     <BrowserRouter>
-      <Header userObj={userObj} />
+      <Header userObj={userObj} setUserObj={setUserObj} />
       <Routes>
         <Route path={routes.home} element={<MainPage userObj={userObj} />} />
         <Route
@@ -23,7 +23,7 @@ function Router({ userObj }) {
         />
         <Route
           path={routes.signIn}
-          element={<SignInPage userObj={userObj} />}
+          element={<SignInPage userObj={userObj} setUserObj={setUserObj} />}
         />
         <Route
           path={routes.signUp}

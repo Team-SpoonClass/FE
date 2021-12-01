@@ -3,14 +3,43 @@ import { AuthInput } from "components/Input";
 import useInput from "hooks/useInput";
 import { CustomSubmitBtn } from "components/CustomButton";
 import { Link } from "react-router-dom";
+import client from "lib/client";
+import { useNavigate } from "react-router-dom";
+import useLocalStorage from "hooks/useLocalStorage";
 
-function SignInForm() {
+function SignInForm({ setUserObj }) {
   const email = useInput("");
   const password = useInput("");
+  const navigate = useNavigate();
+  const { setLocalStorage } = useLocalStorage();
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    console.log(email.value, password.value);
+    if (!email.value || !password.value) {
+      alert("모든 입력창에 입력을 완료해주세요.");
+      return;
+    }
+
+    const requestBody = {
+      email: email.value,
+      password: password.value,
+    };
+    try {
+      await client.post("/auth/signIn", requestBody).then((res) => {
+        if (res.status === 200) {
+          const userData = {
+            id: 1,
+            name: "함인규",
+            oriToken: res.data.oriToken,
+          };
+          setLocalStorage("userData", userData);
+          setUserObj(userData);
+          navigate("/");
+        }
+      });
+    } catch (error) {
+      alert(error.message);
+    }
   };
   return (
     <form className="signInForm" onSubmit={onSubmit}>

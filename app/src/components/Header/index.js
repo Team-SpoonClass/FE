@@ -1,8 +1,17 @@
 import "./index.css";
 import { Link } from "react-router-dom";
 import logoImgPath from "assets/img/spoonclass_logo.png";
+import { useNavigate } from "react-router-dom";
+import useLocalStorage from "hooks/useLocalStorage";
 
-function Header({ userObj }) {
+function Header({ userObj, setUserObj }) {
+  const navigate = useNavigate();
+  const { removeLocalStorage } = useLocalStorage();
+  const onLogOutClick = () => {
+    removeLocalStorage("userData");
+    setUserObj(null);
+    navigate("/landing");
+  };
   return (
     <header>
       <div className="inner">
@@ -28,7 +37,9 @@ function Header({ userObj }) {
               <span className="user-name">{userObj.name}</span>님
             </li>
             <li>
-              <span className="logOut">로그아웃</span>
+              <span className="logOut" onClick={onLogOutClick}>
+                로그아웃
+              </span>
             </li>
           </ul>
         ) : (
