@@ -8,19 +8,18 @@ function App() {
   const { getLocalStorage } = useLocalStorage();
   const [userObj, setUserObj] = useState(null);
 
-  useEffect(() => {
-    const userData = getLocalStorage("userData");
-    setUserObj(() => userData);
+  const represhUserData = async () => {
+    const userData = await getLocalStorage("userData");
+    await setUserObj(() => userData);
     client.defaults.headers.common["x-auth-token"] = userObj
       ? userObj.oriToken
       : null;
+  };
+  useEffect(() => {
+    represhUserData();
 
     window.addEventListener("storage", () => {
-      const userData = getLocalStorage("userData");
-      setUserObj(() => userData);
-      client.defaults.headers.common["x-auth-token"] = userObj
-        ? userObj.oriToken
-        : null;
+      represhUserData();
     });
   }, []);
   return (
