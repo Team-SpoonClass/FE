@@ -2,14 +2,18 @@ import "./index.css";
 import ClassCard from "components/ClassCard";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import useLocalStorage from "hooks/useLocalStorage";
 import client from "lib/client";
 
 function MainPage({ userObj }) {
   const navigate = useNavigate();
+  const { getLocalStorage } = useLocalStorage();
   const [classList, setClassList] = useState([]);
 
   const loadClassList = async () => {
     try {
+      const authToken = await getLocalStorage("userData").oriToken;
+      client.defaults.headers.common["x-auth-token"] = authToken;
       await client.get("/lesson").then((res) => {
         if (res.status === 200) {
           setClassList(() => res.data.lessonDetailDto);

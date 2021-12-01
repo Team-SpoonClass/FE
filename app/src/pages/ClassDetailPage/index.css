@@ -1,5 +1,6 @@
 .detail-class {
   padding-top: 66px;
+  margin-top: 43px;
 }
 
 .class__headInfo {
@@ -25,6 +26,29 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  position: relative;
+}
+
+.headInfo__InfoSpace .class__manage {
+  position: absolute;
+  top: -30px;
+  right: 10px;
+
+  display: flex;
+  gap: 14px;
+}
+
+.class__manage .manage__menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-weight: normal;
+  font-size: 14px;
+  color: #4b4b4b;
+
+  cursor: pointer;
 }
 
 .headInfo__InfoSpace .info {
@@ -88,6 +112,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  white-space: pre;
 }
 
 .class__bodyInfo h2 {
