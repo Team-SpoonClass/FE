@@ -87,24 +87,6 @@
   margin-bottom: 9px;
 }
 
-.participateSpace .participateBtn {
-  width: 332px;
-  height: 56px;
-  font-weight: 800;
-  font-size: 18px;
-  color: #ffffff;
-  background: #ff93ac;
-  border-radius: 5px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.participateSpace .participateBtn:hover {
-  background: #ff7c9b;
-}
-
 .class__bodyInfo {
   margin-top: 50px;
   padding-bottom: 60px;

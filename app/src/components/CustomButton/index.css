@@ -15,3 +15,34 @@
 .btn--active:hover {
   background: #ff7c9b;
 }
+
+.participateBtn {
+  width: 332px;
+  height: 56px;
+  font-weight: 800;
+  font-size: 18px;
+  color: #ffffff;
+
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.participateBtn.opened {
+  background: #ff93ac;
+}
+.participateBtn.opened:hover {
+  background: #ff7c9b;
+}
+
+.participateBtn.closed {
+  background: #b7b7b7;
+}
+.participateBtn.adminOpened {
+  background: #4b4b4b;
+  cursor: pointer;
+}
+.participateBtn.adminOpened:hover {
+  background: #1b1b1b;
+}
