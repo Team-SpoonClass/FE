@@ -28,8 +28,8 @@ function SignInForm({ setUserObj }) {
       await client.post("/auth/signIn", requestBody).then((res) => {
         if (res.status === 200) {
           const userData = {
-            id: 1,
-            name: "함인규",
+            id: res.data.id,
+            name: res.data.username,
             oriToken: res.data.oriToken,
           };
           setLocalStorage("userData", userData);
