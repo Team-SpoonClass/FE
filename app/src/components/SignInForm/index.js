@@ -34,6 +34,7 @@ function SignInForm({ setUserObj }) {
           };
           setLocalStorage("userData", userData);
           setUserObj(userData);
+          client.defaults.headers.common["x-auth-token"] = userData.oriToken;
           navigate("/");
         }
       });

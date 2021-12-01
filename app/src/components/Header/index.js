@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logoImgPath from "assets/img/spoonclass_logo.png";
 import { useNavigate } from "react-router-dom";
 import useLocalStorage from "hooks/useLocalStorage";
+import client from "lib/client";
 
 function Header({ userObj, setUserObj }) {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ function Header({ userObj, setUserObj }) {
   const onLogOutClick = () => {
     removeLocalStorage("userData");
     setUserObj(null);
+    client.defaults.headers.common["x-auth-token"] = null;
     navigate("/landing");
   };
   return (

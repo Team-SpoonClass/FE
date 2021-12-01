@@ -9,7 +9,6 @@ function MainPage({ userObj }) {
   const [classList, setClassList] = useState([]);
 
   const loadClassList = async () => {
-    client.defaults.headers.common["x-auth-token"] = userObj.oriToken;
     try {
       await client.get("/lesson").then((res) => {
         if (res.status === 200) {

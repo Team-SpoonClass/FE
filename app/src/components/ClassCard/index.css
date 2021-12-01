@@ -4,6 +4,9 @@
   flex-direction: column;
   width: 306px;
   cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+  padding: 15px;
 }
 
 .classCard .class__imgSpace {
@@ -22,7 +25,8 @@
 
 .classCard .class__info {
   border-bottom: 1px solid #ff7c9b;
-  padding: 14px 0 23px;
+  /*padding: 14px 0 23px;*/
+  padding-bottom: 23px;
 }
 
 .classCard .class__info h3 {

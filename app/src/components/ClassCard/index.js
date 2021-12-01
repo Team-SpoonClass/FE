@@ -19,7 +19,7 @@ function ClassCard({ classData }) {
           pathname: `/class/${classData.id}`,
         }}
       >
-        <div className="class__imgSpace" />
+        {/* <div className="class__imgSpace" />*/}
         <div className="class__info">
           <h3>{nameSummery}</h3>
           <p>{oneLineInfoSummery}</p>
